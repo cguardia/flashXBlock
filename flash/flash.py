@@ -27,6 +27,11 @@ class flashXBlock(XBlock):
         scope=Scope.content,
         help="The URL for your flash file.")
     
+    use_popup = Boolean(display_name="Open in Pop Up Window",
+        default=True,
+        scope=Scope.content,
+        help="Display a button to open the flash file in a separate window.")
+    
     allow_download = Boolean(display_name="Flash Download Allowed",
         default=True,
         scope=Scope.content,
@@ -71,6 +76,7 @@ class flashXBlock(XBlock):
         context = {
             'display_name': self.display_name,
             'url': self.url,
+            'use_popup': self.use_popup,
             'allow_download': self.allow_download,
             'source_text': self.source_text,
             'source_url': self.source_url
@@ -91,6 +97,7 @@ class flashXBlock(XBlock):
         context = {
             'display_name': self.display_name,
             'url': self.url,
+            'use_popup': self.use_popup,
             'allow_download': self.allow_download,
             'source_text': self.source_text,
             'source_url': self.source_url
@@ -109,6 +116,7 @@ class flashXBlock(XBlock):
         """
         self.display_name = data['display_name']
         self.url = data['url']
+        self.use_popup = True if data['use_popup'] == "True" else False # Str to Bool translation
         self.allow_download = True if data['allow_download'] == "True" else False # Str to Bool translation
         self.source_text = data['source_text']
         self.source_url = data['source_url']

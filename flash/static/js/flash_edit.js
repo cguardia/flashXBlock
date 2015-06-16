@@ -9,6 +9,7 @@ function flashXBlockInitEdit(runtime, element) {
         var data = {
             'display_name': $('#flash_edit_display_name').val(),
             'url': $('#flash_edit_url').val(),
+            'use_popup': $('#flash_edit_use_popup').val(),
             'allow_download': $('#flash_edit_allow_download').val(),
             'source_text': $('#flash_edit_source_text').val(),
             'source_url': $('#flash_edit_source_url').val()

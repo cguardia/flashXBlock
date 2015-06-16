@@ -19,6 +19,17 @@
         
         <li class="field comp-setting-entry is-set">
             <div class="wrapper-comp-setting">
+                <label class="label setting-label" for="flash_edit_use_popup">Use pop up window</label>
+                <select class="input setting-input" id="flash_edit_use_popup">
+                    <option value="True" {% if use_popup %}selected{% endif %}>True</option>
+                    <option value="False" {% if not use_popup %}selected{% endif %}>False</option>
+                </select>
+            </div>
+            <span class="tip setting-help">Display a button that will open this Flash file in a separate window.</span>
+        </li>
+        
+        <li class="field comp-setting-entry is-set">
+            <div class="wrapper-comp-setting">
                 <label class="label setting-label" for="flash_edit_allow_download">Flash Download Allowed</label>
                 <select class="input setting-input" id="flash_edit_allow_download">
                     <option value="True" {% if allow_download %}selected{% endif %}>True</option>
